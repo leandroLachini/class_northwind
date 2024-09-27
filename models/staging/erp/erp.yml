@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: erp_northwind
+    description: Sales system data Northwind
+    database: FEA24_9
+    schema: RAW_NORTHWIND  
+    tables:
+      - name: employee
+        description: Source table with Northwind employee information
+        columns:
+          - name: id
+            data-tests:
+              - unique
+              - not_null
+              
