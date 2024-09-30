@@ -1,8 +1,8 @@
 with
-    int_product as (
+    int_customer as (
         select *
-        from {{ ref('int_product_joins') }}
+        from {{ ref('int_customer_joins') }}
     )
 
 select *
-from int_product
+from int_customer
