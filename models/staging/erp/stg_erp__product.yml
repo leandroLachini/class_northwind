@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_erp_product
+    description: loreum loreum
+    columns:
+      - name: PK_PRODUCT
+        description: loreum
+
+      - name: FK_SUPPLIERID
+        description: loreum
+
+      - name: FK_CATEGORYID
+        description: loreum
+
+      - name: PRODUCT_NAME
+        description: loreum
+
+      - name: PRODUCT_QUANTITYPERUNIT
+        description: loreum
+
+      - name: PRODUCT_UNITPRICE
+        description: loreum
+
+      - name: PRODUCT_UNITSINSTOCK
+        description: loreum
+
+      - name: PRODUCT_UNITSONORDER
+        description: loreum
+
+      - name: PRODUCT_REORDERLEVEL
+        description: loreum
+
+      - name: PRODUCT_DISCONTINUED
+        description: loreum

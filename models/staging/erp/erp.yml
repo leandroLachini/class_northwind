@@ -13,4 +13,32 @@ sources:
             data-tests:
               - unique
               - not_null
+
+      - name: product
+        description: Source table with Northwind product information
+        columns:
+          - name: id
+            data-tests:
+              - unique
+              - not_null
+
+      - name: supplier
+        description: Source table with Northwind supllier information
+        columns:
+          - name: id
+            data-tests:
+              - unique
+              - not_null
+
+      - name: CATEGORY
+        description: Source table with Northwind CATEGORY information
+        columns:
+          - name: id
+            data-tests:
+              - unique
+              - not_null
+
+      - name: _ORDER_
+
+      - name: ORDERDETAIL
               
