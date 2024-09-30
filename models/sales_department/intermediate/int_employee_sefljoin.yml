@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_employee_sefljoin
+    description: loreum loreum
+    columns:
+      - name: PK_EMPLOYEE
+        description: loreum
+        data_tests:
+          - unique
+          - not_null
+          
+      - name: DATE_EMPLOYEE_BIRTHDATE
+        description: loreum
+
+      - name: DATE_EMPLOYEE_HIREDATE
+        description: loreum
+
+      - name: FULLNAME_EMPLOYEE
+        description: loreum
+
+      - name: EMPLOYEE_POSITION
+        description: loreum
+
+      - name: MANAGER_NAME
+        description: loreum
+
+      - name: CITY_EMPLOYEE
+        description: loreum
+
+      - name: REGION_EMPLOYEE
+        description: loreum
+
+      - name: COUNTRY_EMPLOYEE
+        description: loreum
