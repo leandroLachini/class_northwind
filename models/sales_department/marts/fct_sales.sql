@@ -19,5 +19,10 @@ with
         from {{ ref('dim_customer') }}
     )
 
+    , dim_supplier as (
+        select *
+        from {{ ref('dim_supplier') }}
+    )
+
 select *
 from int_sales
