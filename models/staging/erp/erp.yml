@@ -41,4 +41,8 @@ sources:
       - name: _ORDER_
 
       - name: ORDERDETAIL
+
+      - name: CUSTOMER
+
+      - name: SHIPPER
               
