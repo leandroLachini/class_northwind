@@ -1,0 +1,34 @@
+with
+    we_order as (
+        select *
+        from {{ ref('stg_erp__order') }}
+    )
+
+    , union_date_order as (
+        select
+            DATE_ORDER as DATELINE
+        from we_order
+        union
+        select
+            DATE_SHIP as DATELINE
+        from we_order
+        union
+        select
+            DATE_REQUIRED as DATELINE
+        from we_order
+    )
+
+    , remane_table as (
+        select
+        DATELINE
+        , MONTH(DATELINE) as MONTH_DATELINE
+        , YEAR(DATELINE) as YEAR_DATELINE
+        , MONTH_DATELINE || '-' || YEAR_DATELINE as MONTH_YEAR_DATELINE
+        from union_date_order
+        where DATELINE IS NOT NULL
+        order by DATELINE
+    )
+
+
+   select *
+from remane_table
