@@ -21,8 +21,8 @@ with
     , remane_table as (
         select
         DATELINE
-        , MONTH(DATELINE) as MONTH_DATELINE
-        , YEAR(DATELINE) as YEAR_DATELINE
+        , cast(MONTH(DATELINE) as varchar) as MONTH_DATELINE
+        , cast(YEAR(DATELINE) as varchar) as YEAR_DATELINE
         , MONTH_DATELINE || '-' || YEAR_DATELINE as MONTH_YEAR_DATELINE
         from union_date_order
         where DATELINE IS NOT NULL
