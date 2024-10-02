@@ -1,8 +1,8 @@
 with
-    int_dateline as (
+    int_date_union as (
         select *
         from {{ ref('int_date_union') }}
     )
 
 select *
-from int_dateline
+from int_date_union

@@ -1,5 +1,5 @@
 with
-    we_order as (
+    enterprise_order as (
         select *
         from {{ ref('stg_erp__order') }}
     )
@@ -14,24 +14,24 @@ with
         orderdetail.SK_ORDERDETAIL
         , orderdetail.FK_ORDERID
         , orderdetail.FK_PRODUCTID
-        , we_order.PK_ORDER
-        , we_order.FK_EMPLOYEEID
-        , we_order.FK_CUSTOMERID
-        , we_order.FK_SHIPVIA
-        , we_order.DATE_ORDER
-        , we_order.DATE_SHIP
-        , we_order.DATE_REQUIRED
+        , enterprise_order.PK_ORDER
+        , enterprise_order.FK_EMPLOYEEID
+        , enterprise_order.FK_CUSTOMERID
+        , enterprise_order.FK_SHIPVIA
+        , enterprise_order.DATE_ORDER
+        , enterprise_order.DATE_SHIP
+        , enterprise_order.DATE_REQUIRED
         , orderdetail.DISCOUNT_PERCENT
         , orderdetail.SALES_UNITPRICE
         , orderdetail.SALES_QUANTITY
-        , we_order.VALUE_SHIP
-        , we_order.NUMBER_ORDER
-        , we_order.SHIPNAME
-        , we_order.SHIPCITY
-        , we_order.SHIPREGION
-        , we_order.SHIPCOUNTRY
+        , enterprise_order.VALUE_SHIP
+        , enterprise_order.NUMBER_ORDER
+        , enterprise_order.SHIPNAME
+        , enterprise_order.SHIPCITY
+        , enterprise_order.SHIPREGION
+        , enterprise_order.SHIPCOUNTRY
         from orderdetail
-        left join we_order on we_order.PK_ORDER = orderdetail.FK_ORDERID
+        left join enterprise_order on enterprise_order.PK_ORDER = orderdetail.FK_ORDERID
     )
 
     , metrics as (
