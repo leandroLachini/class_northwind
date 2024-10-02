@@ -24,5 +24,15 @@ with
         from {{ ref('dim_supplier') }}
     )
 
+    , dim_shipper as (
+        select *
+        from {{ ref('dim_shipper') }}
+    )
+
+    , dim_date as (
+        select *
+        from {{ ref('dim_date') }}
+    )
+
 select *
 from int_sales
