@@ -1,9 +1,15 @@
+/*  
+    Conexão com a fonte clientes northwind
+*/
+
 with
     source_customer as (
         select 
         *
         from {{ source('erp_northwind', 'CUSTOMER') }}
     )
+
+/* Renomeando colunas da tabela e categorizando os dados */
 
     , remane_table as (
         select

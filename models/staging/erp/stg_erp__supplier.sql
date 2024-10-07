@@ -1,8 +1,12 @@
+/* Conexão com a fonte fornecedor northwind */
+
 with
     source_supplier as (
         select *
         from {{ source('erp_northwind', 'supplier') }}
     )
+
+/* Renomeando colunas da tabela e categorizando os dados */
 
     , remane_table as (
         select

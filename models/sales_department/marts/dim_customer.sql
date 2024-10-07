@@ -1,3 +1,5 @@
+/* Dimensao clientes */
+
 with
     int_customer as (
         select *

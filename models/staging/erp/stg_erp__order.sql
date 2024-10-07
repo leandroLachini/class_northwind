@@ -1,5 +1,17 @@
+/*  
+    Conexão com a fonte pedidos northwind
+*/
+
 with
     source_order as (
+        select 
+        *
+        from {{ source('erp_northwind', '_ORDER_') }}
+    )
+
+/* Renomeando colunas da tabela e categorizando os dados */
+
+    , remane_table as (
         select 
         cast(id as int) PK_ORDER
         , cast(employeeid as int) as FK_EMPLOYEEID
@@ -14,8 +26,9 @@ with
         , cast(shipcity as string) as SHIPCITY
         , cast(shipregion as string) as SHIPREGION
         , cast(shipcountry as string) as SHIPCOUNTRY
-        from {{ source('erp_northwind', '_ORDER_') }}
+        from source_order
     )
 
+
 select *
-from source_order
+from remane_table
