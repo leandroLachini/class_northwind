@@ -1,9 +1,13 @@
+/* Conexão com a fonte transportador northwind */
+
 with
     source_shipper as (
         select 
         *
         from {{ source('erp_northwind', 'SHIPPER') }}
     )
+
+/* Renomeando colunas da tabela e categorizando os dados */
 
     , remane_table as (
         select

@@ -1,8 +1,14 @@
+/*  
+    Conexão com a fonte funcionarios northwind
+*/
+
 with
     source_employees as (
         select *
         from {{ source('erp_northwind', 'employee') }}
     )
+
+/* Renomeando colunas da tabela e categorizando os dados */
 
     , remane_table as (
         select
